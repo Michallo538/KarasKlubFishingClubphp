@@ -78,16 +78,37 @@ html {
 }
 
 
-
-
-.carousel-item{
-    height: 35rem;
-    padding-left: 10%;
-    padding-right: 10%;
+.CarouselContainer {
+    min-height: auto;
 }
 
-.BlogContainer{
+
+
+.carousel-item {
+padding-left: 15%;
+padding-right: 15%;
+    max-height: 500px;
+}
+@media screen and (max-width:1450px) {
+    .carousel-item {
+        height: 200px;
+    }
+
+}
+
+.BlogContainer {
 
     margin-top: 2rem;
-    
+
 }
+@media screen and (max-width:700px) {
+    .BlogContainer {
+        margin-top: auto;
+    }
+
+}
+.ViewBlogButton{
+    padding-bottom: 1.5rem;
+}
+
+
