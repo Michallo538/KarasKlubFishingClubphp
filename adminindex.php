@@ -20,7 +20,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Klub Karaś</title>
+    <title>Admin Panel | Klub Karaś</title>
     <link data-require="bootstrap@4.0.0-beta" data-semver="4.0.0-beta" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -29,6 +29,18 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
     <link rel="stylesheet" href="/Styles/style.css" />
     <script src="/JavaScript/app.js"></script>
     <script src="/JavaScript/backgroundbanner.js"></script>
+    <script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
 </head>
 
 
@@ -85,8 +97,12 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                 <div class="alert alert-success" role="alert">
                     Zostałeś zalogowany pomyślnie
                 </div>
-                <?php } ?>
+                <?php } elseif ($_REQUEST['info'] == "updated") {?>
+                    <div class="alert alert-success" role="alert">
+                        Blog został aktualizowany!
+                    </div>
 
+                    <?php } ?>
             <?php } ?>
 
             <div class="text-center mt-5">
@@ -106,7 +122,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                                     <h2 class="card-title"><?php echo $q['PostTitle']; ?></h2>
                                     <p style="font-size: 15px;" class="card-text"> <?php echo  substr($q['PostDescription'], 0, 50); ?>... </p>
                                     <p style="position:absolute; right:0px; bottom:20%;" class="card-text"> <?php echo $q['DateAdded']; ?></p>
-                                    <a style="" href="view.php?PostID=<?php echo $q['PostID']; ?>" class="btn btn-light"> Zobacz całe... <span class="text-danger">&rarr;</span></a>
+                                    <a style="" href="adminview.php?PostID=<?php echo $q['PostID']; ?>" class="btn btn-light"> Zobacz całe... <span class="text-danger">&rarr;</span></a>
                                 </div>
                             </div>
                         </div>

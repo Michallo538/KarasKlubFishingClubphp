@@ -1,7 +1,10 @@
 <?php
 
 include "logic.php";
-
+session_start();
+if(!isset($_SESSION["username"])){
+    header("Location:adminlogin.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +15,7 @@ include "logic.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     foreach ($query as $q) { ?>
-    <title> <?php echo $q['PostTitle'];  ?>| Klub Karaś</title>
+    <title> <?php echo $q['PostTitle'];  ?> (Admin) | Klub Karaś</title>
 
     <?php } ?>
 
@@ -25,7 +28,6 @@ include "logic.php";
     <link rel="stylesheet" href="/Styles/style.css" />
     <script src="/JavaScript/app.js"></script>
     <script src="/JavaScript/backgroundbanner.js"></script>
-
     <script>
     var myVar;
 
@@ -78,13 +80,20 @@ include "logic.php";
             <div class="bg-dark p-5 rounded-lg text-white text-center">
                 <h2> <?php echo $q['PostTitle']; ?> </h2>
                 <div class="d-flex mt-2 justify-content-center align-items-center">
+                    <a class="btn btn-light btn-sm" href="edit.php?PostID=<?php echo $q['PostID'];?>">Edytuj </a>
 
+
+                    <form method="POST">
+                        <input type="text" hidden name="PostID" value="<?php echo $q['PostID']?>">
+                        <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
+                    </form>
                 </div>
             </div>
             <p class="mt-5 border-left border-dark pl-3"><?php echo $q['PostDescription']; ?>  </p>
             <p> <?php echo $q['AdminName']; ?> </p>
 
             <?php } ?>
+            <a href="adminindex.php" class="btn btn-dark btn-sm">Cofnij</a>
         </div>
 
 

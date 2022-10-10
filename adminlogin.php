@@ -22,6 +22,18 @@ $_SESSION['username'] = $username;
     <link rel="stylesheet" href="/Styles/style.css" />
     <script src="/JavaScript/app.js"></script>
     <script src="/JavaScript/backgroundbanner.js"></script>
+    <script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
 </head>
 
 <body>
@@ -40,13 +52,11 @@ $_SESSION['username'] = $username;
         <div class="align-items-center d-flex justify-content-center">
             <div class="form-group">
                 <label>Nazwa Użytkownika</label>
-                <input required type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input required type="text" name="username" value="" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
             </div>
             <div class="form-group">
                 <label>Hasło</label>
                 <input required type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <br>
             <div class="form-group">

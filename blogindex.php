@@ -19,6 +19,18 @@ include "logic.php";
     <link rel="stylesheet" href="/Styles/style.css" />
     <script src="/JavaScript/app.js"></script>
     <script src="/JavaScript/backgroundbanner.js"></script>
+    <script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
 </head>
 
 
