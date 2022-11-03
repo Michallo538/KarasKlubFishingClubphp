@@ -2,9 +2,13 @@
 <html lang="en">
 
 <head>
+    <meta name="description" content="Jest to blog oparty na Klubie Wędkarskim Karaś w Prószkowie ">
+    <meta name="keywords" content="Blog, Klub Wędkarski, klub wedkarski, klub karas, klub karaś,karas, Karaś , Karas , karaś, Fryzjer Warszawa, Sekret Fryzjera">
+    <meta name="author" content="Michal Mazur">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fishing club bruh lmao cringe yoll</title>
     <link data-require="bootstrap@4.0.0-beta" data-semver="4.0.0-beta" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -53,7 +57,7 @@
                         <a class="nav-link" href="blogindex.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
+                        <a class="nav-link" href="contact.php">Kontakt</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,7 +66,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Zaloguj się</a>
+                            <a class="dropdown-item" href="adminlogin.php">Zaloguj się - Admin</a>
                         </div>
                     </li>
                 </ul>
@@ -71,7 +75,9 @@
 
 
 
-        <div class="d-flex container align-items-center justify-content-center"><p class="h1">Witaj na Blogu Klubu Wędkarskiego Karaś!</p></div>
+        <div class="d-flex container align-items-center justify-content-center">
+            <p class="h1">Witaj na Blogu Klubu Wędkarskiego Karaś!</p>
+        </div>
         <div class="CarouselContainer">
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
